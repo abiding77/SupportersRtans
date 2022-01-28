@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="정지원 님의 추억사진"/>
+    <meta property="og:description" content="내가 만든 첫번째 웹페이지!"/>
+    <meta property="og:image" content="./images/hackerton.jpg"/>
+    <title>나의 추억거리를 공유합니다.</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="mytitle">
+        <h1>나의 추억거리를 공유합니다</h1>
+        <a class = "btn" href="https://spartacodingclub.kr/community/exhibition" target="_blank">모든 르탄즈들의 추억 보러가기 ></a>
+    </div>
+    <div class="box">
+        <div class="map" id="map"></div>
+        <div class="story">
+            <div class="img"></div>
+            <h2>인하대학교</h2>
+            <h3>인천 미추홀구 인하로 100</h3>
+            <p>코로나가 확산되기 전.<br>
+                동기 및 선배들과 함께<br>
+                교내에서 열리는 웹 해커톤 대회에<br>
+                다같이 모여서 준비를 하는 사진이다.<br>
+                빨리 코로나가 종식되어 다시 한 번<br>
+                모여서 코딩하고 싶다.</p>
+        </div>
+    </div> 
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=535068688f1a8bca1c21a9445ede0a89"></script>
+<script>
+      var markerPosition = new kakao.maps.LatLng(37.45016687635773, 126.65352018444595)
+      var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+          mapOption = { 
+              center: markerPosition, // 지도의 중심좌표
+              level: 3 // 지도의 확대 레벨
+          };
+
+      var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+      var imageSrc = "https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/2021_05_free_parents/sparta-marker.png"; 
+      var imageSize = new kakao.maps.Size(65, 86); 
+      var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
+      
+      var marker = new kakao.maps.Marker({
+          map: map,
+          position: markerPosition,
+          image : markerImage
+      });
+
+</script>
+</body>
+</html>
